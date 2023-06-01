@@ -5,13 +5,14 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() {
+window.onload = () => {
   //write your code here
-  const elemento = document.querySelector("#excuse");
-  elemento.innerText = Excusas();
+  document.querySelector("#btn").addEventListener("click", () => {
+    document.querySelector("#excuse").innerHTML = Excusas();
+  });
 };
 
-function Excusas() {
+let Excusas = () => {
   let who = ["The dog", "My grandma", "His turtle", "My bird"];
   let action = ["ate", "peed", "crushed", "broke"];
   let what = ["my homework", "the keys", "the car"];
@@ -28,4 +29,4 @@ function Excusas() {
   } ${what[Math.floor(Math.random() * what.length)]} ${
     when[Math.floor(Math.random() * when.length)]
   }`;
-}
+};
